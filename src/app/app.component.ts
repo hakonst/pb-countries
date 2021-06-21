@@ -123,7 +123,7 @@ export class AppComponent {
       switching = false;
       rows = table.rows;
       /* Loop through all table rows (except the
-      first, which contains table headers): */
+      first and last three, which contains table headers and footers): */
       for (i = 1; i < (rows.length - 4); i++) {
         // Start by saying there should be no switching:
         shouldSwitch = false;
@@ -179,7 +179,7 @@ export class AppComponent {
       rows = table.rows;
       /* Loop through all table rows (except the
       first, which contains table headers): */
-      for (i = 1; i < (rows.length - 4); i++) {
+      for (i = 1; i < (rows.length - 1); i++) {
         // Start by saying there should be no switching:
         shouldSwitch = false;
         /* Get the two elements you want to compare,
