@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="countries">
+    <table id="tblCountries" *ngIf="countries.length > 0">
+      <tr>
+        <th align="left" (click)="sortTableString('tblCountries', 0)">Name</th>
+        <th align="left" (click)="sortTableString('tblCountries', 1)">Region</th>
+        <th align="left" (click)="sortTableNumber('tblCountries', 2)">Area</th>
+        <th align="left" (click)="sortTableNumber('tblCountries', 3)">Population</th>
+      </tr>
+
+      <tr *ngFor="let country of countries">
+        <td>{{country.name}}</td>
+        <td>{{country.region}}</td>
+        <td>{{country.area | squareMetricMiles}}</td>
+        <td>{{country.population | population}}</td>
+      </tr>
+
+      <tr>
+        <tfoot>Population average</tfoot>
+        <td>{{getPopulationAverage()}}</td>
+      </tr>
+
+      <tr>
+        <tfoot>Smallest area</tfoot>
+        <td>{{getSmallestArea()}}</td>
+      </tr>
+
+      <tr>
+        <tfoot>Largest area</tfoot>
+        <td>{{getLargestArea()}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="languages">
+    <table id="tblLanguages" *ngIf="languages.length > 0">
+      <tr>
+        <th align="left">Language</th>
+        <th align="left">Countries</th>
+        <th align="left">Population</th>
+      </tr>
+
+      <tr *ngFor="let language of languages">
+        <td>{{language.name}}</td>
+        <td>{{language.countries}}</td>
+        <td>{{language.population}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
